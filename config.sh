@@ -70,6 +70,10 @@ readonly KSU_NEXT_BRANCH="8979126b66aa8cd503071ffb98df8ec5c7a78742"
 
 readonly SUSFS_REPO="https://gitlab.com/simonpunk/susfs4ksu.git"
 readonly SUSFS_BRANCH="gki-android14-6.1-dev"
+# Pinned to match KSU_NEXT_BRANCH (last commit before 2026-10-31 06:26 UTC, known-good).
+# SUSFS's KernelSU patch tracks upstream KernelSU-Next, so the two must move together.
+# Set to "" to follow SUSFS_BRANCH again.
+readonly SUSFS_COMMIT="42bab41266e14533e9da7b3797afe0dbdc4a98ee"
 
 readonly ANYKERNEL_REPO="https://github.com/Ante0/AnyKernel3"
 readonly ANYKERNEL_BRANCH_PREFIX="sultan-17"
