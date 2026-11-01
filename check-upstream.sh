@@ -20,8 +20,7 @@ case "$PROFILE" in
         RELEASE_TAG="Nightly"
         RELEASE_TITLE="Automated Nightly Build"
         MATRIX_BRANCHES=(
-            17.0.0-cp2a
-            17.0.0-cp3a
+            17.0.0-cp41.007
         )
         ;;
     lts)
@@ -183,7 +182,7 @@ EOF
 
 ##KERNELSU
     if [[ "${OLD_KSU}" != "${NEW_KSU}" ]]; then
-        BUILD_VARIANTS+=(ksu-susfs ksu-susfs-vpnhide)
+        BUILD_VARIANTS+=(ksu-susfs)
 
         SHORT_SHA="${NEW_KSU:0:7}"
 
@@ -197,7 +196,7 @@ EOF
 
 ### KERNELSU-NEXT
     if [[ "${OLD_NEXT}" != "${NEW_NEXT}" ]]; then
-        BUILD_VARIANTS+=(ksu-next-susfs ksu-next-susfs-vpnhide)
+        BUILD_VARIANTS+=(ksu-next-susfs)
 
 	SHORT_SHA="${NEW_NEXT:0:7}"
 
@@ -211,7 +210,7 @@ EOF
 
 ###SUSFS
     if [[ "${OLD_SUSFS}" != "${NEW_SUSFS}" ]]; then
-        BUILD_VARIANTS+=(ksu-susfs ksu-next-susfs ksu-susfs-vpnhide ksu-next-susfs-vpnhide)
+        BUILD_VARIANTS+=(ksu-susfs ksu-next-susfs)
 
 	SHORT_SHA="${NEW_SUSFS:0:7}"
 
@@ -224,7 +223,7 @@ EOF
     fi
 
     if [[ "${OLD_NOMOUNT}" != "${NEW_NOMOUNT}" ]]; then
-        BUILD_VARIANTS+=(ksu-susfs ksu-next-susfs ksu-susfs-vpnhide ksu-next-susfs-vpnhide)
+        BUILD_VARIANTS+=(ksu-susfs ksu-next-susfs)
 
 	SHORT_SHA="${NEW_NOMOUNT:0:7}"
 
@@ -237,7 +236,7 @@ EOF
     fi
 
     if [[ "${OLD_VPNHIDE}" != "${NEW_VPNHIDE}" ]]; then
-        BUILD_VARIANTS+=(ksu-susfs-vpnhide ksu-next-susfs-vpnhide)
+        BUILD_VARIANTS+=()
 
         SHORT_SHA="${NEW_VPNHIDE:0:7}"
 
