@@ -113,10 +113,20 @@ clone_nomount() {
 clone_susfs() {
 	msg "Cloning SUSFS"
 
-	git clone \
-		--depth=1 \
-		-b "${SUSFS_BRANCH}" \
-		"${SUSFS_REPO}"
+	if [[ -n "${SUSFS_COMMIT}" ]]; then
+		# A pinned commit is not reachable from a depth-1 clone
+		git clone \
+			--filter=blob:none \
+			-b "${SUSFS_BRANCH}" \
+			"${SUSFS_REPO}"
+		git -C susfs4ksu checkout -q "${SUSFS_COMMIT}"
+		msg "SUSFS pinned to ${SUSFS_COMMIT}"
+	else
+		git clone \
+			--depth=1 \
+			-b "${SUSFS_BRANCH}" \
+			"${SUSFS_REPO}"
+	fi
 }
 
 clone_fgetpriority() {
