@@ -65,7 +65,8 @@ readonly KSU_REPO="https://github.com/tiann/KernelSU"
 readonly KSU_BRANCH="main"
 
 readonly KSU_NEXT_REPO="https://github.com/KernelSU-Next/KernelSU-Next"
-readonly KSU_NEXT_BRANCH="dev"
+# Pinned to the parent of cefb048b: later dev breaks fix_init.c.patch
+readonly KSU_NEXT_BRANCH="2401d452ce25101fc8189fe88b49462720b666b4"
 
 readonly SUSFS_REPO="https://gitlab.com/simonpunk/susfs4ksu.git"
 readonly SUSFS_BRANCH="gki-android14-6.1-dev"
