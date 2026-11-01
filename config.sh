@@ -41,16 +41,12 @@ readonly DIST_DIR="${REPO_ROOT}/dist"
 ###############################################################################
 
 readonly TARGETS=(
-    gs201
-    zuma
     zumapro
 )
 
 readonly VARIANTS=(
     ksu-susfs
-    ksu-susfs-vpnhide
     ksu-next-susfs
-    ksu-next-susfs-vpnhide
 )
 
 ###############################################################################
@@ -58,8 +54,6 @@ readonly VARIANTS=(
 ###############################################################################
 
 declare -Ar DEFCONFIGS=(
-    [gs201]="gs201_defconfig"
-    [zuma]="zuma_defconfig"
     [zumapro]="zumapro_defconfig"
 )
 
