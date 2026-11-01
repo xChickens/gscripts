@@ -65,15 +65,14 @@ readonly KSU_REPO="https://github.com/tiann/KernelSU"
 readonly KSU_BRANCH="main"
 
 readonly KSU_NEXT_REPO="https://github.com/KernelSU-Next/KernelSU-Next"
-# Pinned to the last dev commit before 2026-10-31 (known-good); later dev breaks the SUSFS fix patches
-readonly KSU_NEXT_BRANCH="8979126b66aa8cd503071ffb98df8ec5c7a78742"
+# Following dev again: Ante0/kernel_patches 0fb8c40 (2026-11-01) targets current dev.
+# To pin, set this to a commit SHA (and SUSFS_COMMIT below to a matching one).
+readonly KSU_NEXT_BRANCH="dev"
 
 readonly SUSFS_REPO="https://gitlab.com/simonpunk/susfs4ksu.git"
 readonly SUSFS_BRANCH="gki-android14-6.1-dev"
-# Pinned to match KSU_NEXT_BRANCH (last commit before 2026-10-31 06:26 UTC, known-good).
-# SUSFS's KernelSU patch tracks upstream KernelSU-Next, so the two must move together.
-# Set to "" to follow SUSFS_BRANCH again.
-readonly SUSFS_COMMIT="42bab41266e14533e9da7b3797afe0dbdc4a98ee"
+# Empty = follow SUSFS_BRANCH tip. Set to a SHA to pin (must match KSU_NEXT_BRANCH).
+readonly SUSFS_COMMIT=""
 
 readonly ANYKERNEL_REPO="https://github.com/Ante0/AnyKernel3"
 readonly ANYKERNEL_BRANCH_PREFIX="sultan-17"
